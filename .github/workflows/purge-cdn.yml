@@ -1,0 +1,22 @@
+name: Purge jsDelivr CDN
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Purge registry.json
+        run: curl -s "https://purge.jsdelivr.net/gh/ranjeet-zet/ra-ui-registry@main/registry.json"
+
+      - name: Purge all component files
+        run: |
+          for file in components/*; do
+            filename=$(basename "$file")
+            echo "Purging $filename..."
+            curl -s "https://purge.jsdelivr.net/gh/ranjeet-zet/ra-ui-registry@main/components/$filename"
+          done
