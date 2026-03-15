@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "name": "button",
+      "description": "A styled Pressable button component with variants",
+      "files": ["button.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "input",
+      "description": "A styled TextInput component",
+      "files": ["input.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "card",
+      "description": "A card container component",
+      "files": ["card.tsx"],
+      "dependencies": []
+    }
+  ]
+}
