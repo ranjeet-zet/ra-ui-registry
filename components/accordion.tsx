@@ -14,21 +14,22 @@ if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-interface AccordionProps {
+interface AccordionItemProps {
   title: string;
-  subtitle?: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
+}
+
+interface AccordionProps {
+  children: React.ReactNode;
   style?: ViewStyle;
 }
 
-export function Accordion({
-  title,
-  subtitle,
-  children,
-  defaultOpen = false,
-  style,
-}: AccordionProps) {
+export function Accordion({ children, style }: AccordionProps) {
+  return <View style={[styles.accordion, style]}>{children}</View>;
+}
+
+export function AccordionItem({ title, children, defaultOpen = false }: AccordionItemProps) {
   const [open, setOpen] = useState(defaultOpen);
 
   const toggle = () => {
@@ -37,59 +38,22 @@ export function Accordion({
   };
 
   return (
-    <View style={[styles.container, style]}>
-      <Pressable onPress={toggle} style={styles.header}>
-        <View style={styles.headerText}>
-          <Text style={styles.title}>{title}</Text>
-          {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
-        </View>
-        <Text style={[styles.arrow, open && styles.arrowOpen]}>
-          {"\u25BC"}
-        </Text>
+    <View style={styles.item}>
+      <Pressable onPress={toggle} style={styles.trigger}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.chevron, open && styles.chevronOpen]}>{"\u25BC"}</Text>
       </Pressable>
-      {open && <View style={styles.body}>{children}</View>}
+      {open && <View style={styles.content}>{children}</View>}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: "#E2E2E4",
-    borderRadius: 10,
-    overflow: "hidden",
-    backgroundColor: "#FFFFFF",
-  },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 16,
-  },
-  headerText: {
-    flex: 1,
-    gap: 4,
-  },
-  title: {
-    fontSize: 15,
-    fontWeight: "600",
-    color: "#22202F",
-  },
-  subtitle: {
-    fontSize: 13,
-    color: "#88878F",
-  },
-  arrow: {
-    fontSize: 12,
-    color: "#88878F",
-    marginLeft: 12,
-  },
-  arrowOpen: {
-    transform: [{ rotate: "180deg" }],
-  },
-  body: {
-    padding: 16,
-    paddingTop: 0,
-    backgroundColor: "#F6F6F7",
-  },
+  accordion: { borderWidth: 1, borderColor: "#E4E4E7", borderRadius: 8, overflow: "hidden" },
+  item: { borderBottomWidth: 1, borderBottomColor: "#E4E4E7" },
+  trigger: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", padding: 16 },
+  title: { fontSize: 15, fontWeight: "600", color: "#09090B", flex: 1 },
+  chevron: { fontSize: 11, color: "#71717A", transition: "transform 0.2s" },
+  chevronOpen: { transform: [{ rotate: "180deg" }] },
+  content: { paddingHorizontal: 16, paddingBottom: 16 },
 });

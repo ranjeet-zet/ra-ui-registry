@@ -1,40 +1,27 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet, ViewStyle } from "react-native";
 
-type Intent = "success" | "error" | "warning";
+type Variant = "default" | "destructive";
 
 interface ToastProps {
-  intent?: Intent;
   title: string;
-  message?: string;
-  actionLabel?: string;
-  onAction?: () => void;
+  description?: string;
+  variant?: Variant;
+  action?: { label: string; onPress: () => void };
   onClose?: () => void;
   style?: ViewStyle;
 }
 
-export function Toast({
-  intent = "success",
-  title,
-  message,
-  actionLabel,
-  onAction,
-  onClose,
-  style,
-}: ToastProps) {
+export function Toast({ title, description, variant = "default", action, onClose, style }: ToastProps) {
   return (
-    <View style={[styles.container, intentStyles[intent], style]}>
-      <View style={[styles.border, intentBorderStyles[intent]]} />
-      <Text style={styles.icon}>{iconMap[intent]}</Text>
+    <View style={[styles.toast, variant === "destructive" && styles.destructive, style]}>
       <View style={styles.content}>
-        <Text style={styles.title}>{title}</Text>
-        {message && <Text style={styles.message}>{message}</Text>}
+        <Text style={[styles.title, variant === "destructive" && styles.destructiveTitle]}>{title}</Text>
+        {description && <Text style={[styles.desc, variant === "destructive" && styles.destructiveDesc]}>{description}</Text>}
       </View>
-      {actionLabel && onAction && (
-        <Pressable onPress={onAction} style={styles.actionBtn}>
-          <Text style={[styles.actionText, intentActionStyles[intent]]}>
-            {actionLabel}
-          </Text>
+      {action && (
+        <Pressable onPress={action.onPress} style={styles.actionBtn}>
+          <Text style={[styles.actionText, variant === "destructive" && styles.destructiveAction]}>{action.label}</Text>
         </Pressable>
       )}
       {onClose && (
@@ -46,77 +33,17 @@ export function Toast({
   );
 }
 
-const iconMap: Record<Intent, string> = {
-  success: "\u2705",
-  error: "\u274C",
-  warning: "\u26A0\uFE0F",
-};
-
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 14,
-    borderRadius: 10,
-    gap: 12,
-    overflow: "hidden",
-  },
-  border: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    bottom: 0,
-    width: 4,
-  },
-  icon: {
-    fontSize: 18,
-    marginLeft: 4,
-  },
-  content: {
-    flex: 1,
-    gap: 2,
-  },
-  title: {
-    fontSize: 15,
-    fontWeight: "600",
-    color: "#22202F",
-  },
-  message: {
-    fontSize: 13,
-    color: "#55535F",
-    lineHeight: 18,
-  },
-  actionBtn: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-  },
-  actionText: {
-    fontSize: 13,
-    fontWeight: "600",
-  },
-  closeBtn: {
-    padding: 4,
-  },
-  closeText: {
-    fontSize: 14,
-    color: "#88878F",
-  },
+  toast: { flexDirection: "row", alignItems: "center", backgroundColor: "#FFFFFF", borderWidth: 1, borderColor: "#E4E4E7", borderRadius: 8, padding: 16, gap: 12, shadowColor: "#000", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.1, shadowRadius: 8, elevation: 5 },
+  destructive: { backgroundColor: "#DC2626", borderColor: "#DC2626" },
+  content: { flex: 1, gap: 2 },
+  title: { fontSize: 14, fontWeight: "600", color: "#09090B" },
+  desc: { fontSize: 13, color: "#71717A" },
+  destructiveTitle: { color: "#FFFFFF" },
+  destructiveDesc: { color: "#FECACA" },
+  actionBtn: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 4, borderWidth: 1, borderColor: "#E4E4E7" },
+  actionText: { fontSize: 13, fontWeight: "500", color: "#09090B" },
+  destructiveAction: { color: "#FFF", borderColor: "#FFF" },
+  closeBtn: { padding: 4 },
+  closeText: { fontSize: 14, color: "#A1A1AA" },
 });
-
-const intentStyles: Record<Intent, ViewStyle> = {
-  success: { backgroundColor: "#f0faf1" },
-  error: { backgroundColor: "#fef5f5" },
-  warning: { backgroundColor: "#fff9f0" },
-};
-
-const intentBorderStyles: Record<Intent, ViewStyle> = {
-  success: { backgroundColor: "#41bc49" },
-  error: { backgroundColor: "#ff4961" },
-  warning: { backgroundColor: "#ffa32a" },
-};
-
-const intentActionStyles: Record<Intent, { color: string }> = {
-  success: { color: "#2b7d31" },
-  error: { color: "#d30d28" },
-  warning: { color: "#d88603" },
-};

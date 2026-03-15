@@ -1,124 +1,32 @@
 {
   "components": [
-    {
-      "name": "button",
-      "description": "Pressable button with variants — primary, outline, ghost, error, success, warning. Supports loading, icons, sizes.",
-      "files": ["button.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "input",
-      "description": "TextInput with label, error, icon left/right, required indicator, focus state, sizes.",
-      "files": ["input.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "textarea",
-      "description": "Multi-line TextInput with label, error, character count, max length support.",
-      "files": ["textarea.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "card",
-      "description": "Card container with Header, Body, Footer sub-components and shadow styling.",
-      "files": ["card.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "avatar",
-      "description": "Circular avatar with image, fallback initials, HSL color from name. Includes AvatarGroup.",
-      "files": ["avatar.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "badge",
-      "description": "Small status badge with default, success, warning, error, info variants.",
-      "files": ["badge.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "tag",
-      "description": "Compact label tag with primary, success, error, warning, info, neutral variants.",
-      "files": ["tag.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "chip",
-      "description": "Selectable chip with solid/outlined types, icon support, sizes.",
-      "files": ["chip.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "selectable-chip",
-      "description": "Toggle chip with active/inactive state for filters and selections.",
-      "files": ["selectable-chip.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "switch",
-      "description": "Animated toggle switch with intent variants — primary, success, warning, error.",
-      "files": ["switch.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "checkbox",
-      "description": "Checkbox with label, checked state, and disabled support.",
-      "files": ["checkbox.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "select",
-      "description": "Dropdown select with modal picker, label, error, placeholder support.",
-      "files": ["select.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "alert",
-      "description": "Alert banner with info, success, warning, error, primary variants.",
-      "files": ["alert.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "toast",
-      "description": "Toast notification with intent color border, title, message, action button, close.",
-      "files": ["toast.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "accordion",
-      "description": "Collapsible section with animated expand/collapse, title, subtitle.",
-      "files": ["accordion.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "divider",
-      "description": "Horizontal or vertical divider line with optional label.",
-      "files": ["divider.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "tile",
-      "description": "Pressable tile container with subtitle and size variants.",
-      "files": ["tile.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "stepper",
-      "description": "Step progress bar showing current/total steps with intent colors.",
-      "files": ["stepper.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "fab",
-      "description": "Floating action button with absolute positioning, shadow, icon, loading, variants.",
-      "files": ["fab.tsx"],
-      "dependencies": []
-    },
-    {
-      "name": "icon-button",
-      "description": "Pressable icon wrapper with default, primary, ghost variants and sizes.",
-      "files": ["icon-button.tsx"],
-      "dependencies": []
-    }
+    { "name": "accordion", "description": "A vertically stacked set of collapsible sections.", "files": ["accordion.tsx"], "dependencies": [] },
+    { "name": "alert", "description": "Displays a callout for important messages.", "files": ["alert.tsx"], "dependencies": [] },
+    { "name": "alert-dialog", "description": "A modal dialog that interrupts with important content and expects a response.", "files": ["alert-dialog.tsx"], "dependencies": [] },
+    { "name": "avatar", "description": "An image element with a fallback for representing the user.", "files": ["avatar.tsx"], "dependencies": [] },
+    { "name": "badge", "description": "Displays a badge or a component that looks like a badge.", "files": ["badge.tsx"], "dependencies": [] },
+    { "name": "button", "description": "Displays a button or a component that looks like a button.", "files": ["button.tsx"], "dependencies": [] },
+    { "name": "card", "description": "Displays a card with header, content, and footer.", "files": ["card.tsx"], "dependencies": [] },
+    { "name": "checkbox", "description": "A control that allows the user to toggle between checked and not checked.", "files": ["checkbox.tsx"], "dependencies": [] },
+    { "name": "collapsible", "description": "An interactive component that expands and collapses content.", "files": ["collapsible.tsx"], "dependencies": [] },
+    { "name": "dialog", "description": "A modal dialog that renders on top of the page.", "files": ["dialog.tsx"], "dependencies": [] },
+    { "name": "input", "description": "Displays a form input field.", "files": ["input.tsx"], "dependencies": [] },
+    { "name": "input-otp", "description": "Accessible one-time password input with copy paste support.", "files": ["input-otp.tsx"], "dependencies": [] },
+    { "name": "label", "description": "Renders an accessible label associated with controls.", "files": ["label.tsx"], "dependencies": [] },
+    { "name": "progress", "description": "Displays an indicator showing the progress of a task.", "files": ["progress.tsx"], "dependencies": [] },
+    { "name": "radio-group", "description": "A set of checkable buttons where only one can be checked at a time.", "files": ["radio-group.tsx"], "dependencies": [] },
+    { "name": "select", "description": "Displays a list of options for the user to pick from.", "files": ["select.tsx"], "dependencies": [] },
+    { "name": "separator", "description": "Visually separates content.", "files": ["separator.tsx"], "dependencies": [] },
+    { "name": "sheet", "description": "A panel that slides in from the edge of the screen.", "files": ["sheet.tsx"], "dependencies": [] },
+    { "name": "skeleton", "description": "Used to show a placeholder while content is loading.", "files": ["skeleton.tsx"], "dependencies": [] },
+    { "name": "slider", "description": "An input where the user selects a value from within a given range.", "files": ["slider.tsx"], "dependencies": [] },
+    { "name": "switch", "description": "A control that allows the user to toggle between two states.", "files": ["switch.tsx"], "dependencies": [] },
+    { "name": "table", "description": "A responsive table component.", "files": ["table.tsx"], "dependencies": [] },
+    { "name": "tabs", "description": "A set of layered sections of content displayed one at a time.", "files": ["tabs.tsx"], "dependencies": [] },
+    { "name": "textarea", "description": "Displays a form textarea field.", "files": ["textarea.tsx"], "dependencies": [] },
+    { "name": "toast", "description": "A succinct message that is displayed temporarily.", "files": ["toast.tsx"], "dependencies": [] },
+    { "name": "toggle", "description": "A two-state button that can be either on or off.", "files": ["toggle.tsx"], "dependencies": [] },
+    { "name": "toggle-group", "description": "A set of two-state buttons that can be toggled.", "files": ["toggle-group.tsx"], "dependencies": [] },
+    { "name": "tooltip", "description": "A popup that displays information related to an element on hover.", "files": ["tooltip.tsx"], "dependencies": [] }
   ]
 }

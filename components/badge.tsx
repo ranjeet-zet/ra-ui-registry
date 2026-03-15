@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ViewStyle, TextStyle } from "react-native";
 
-type Variant = "default" | "success" | "warning" | "error" | "info";
+type Variant = "default" | "secondary" | "destructive" | "outline";
 
 interface BadgeProps {
   label: string;
@@ -18,31 +18,20 @@ export function Badge({ label, variant = "default", style }: BadgeProps) {
 }
 
 const styles = StyleSheet.create({
-  badge: {
-    alignSelf: "flex-start",
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    borderRadius: 100,
-    borderWidth: 1,
-  },
-  text: {
-    fontSize: 12,
-    fontWeight: "600",
-  },
+  badge: { alignSelf: "flex-start", paddingHorizontal: 10, paddingVertical: 2, borderRadius: 100 },
+  text: { fontSize: 12, fontWeight: "600" },
 });
 
 const variantStyles: Record<Variant, ViewStyle> = {
-  default: { backgroundColor: "#F4F4F5", borderColor: "#E4E4E7" },
-  success: { backgroundColor: "#F0FDF4", borderColor: "#BBF7D0" },
-  warning: { backgroundColor: "#FFFBEB", borderColor: "#FDE68A" },
-  error: { backgroundColor: "#FEF2F2", borderColor: "#FECACA" },
-  info: { backgroundColor: "#EFF6FF", borderColor: "#BFDBFE" },
+  default: { backgroundColor: "#18181B" },
+  secondary: { backgroundColor: "#F4F4F5" },
+  destructive: { backgroundColor: "#DC2626" },
+  outline: { backgroundColor: "transparent", borderWidth: 1, borderColor: "#E4E4E7" },
 };
 
 const variantTextStyles: Record<Variant, TextStyle> = {
-  default: { color: "#3F3F46" },
-  success: { color: "#166534" },
-  warning: { color: "#92400E" },
-  error: { color: "#991B1B" },
-  info: { color: "#1E40AF" },
+  default: { color: "#FAFAFA" },
+  secondary: { color: "#18181B" },
+  destructive: { color: "#FAFAFA" },
+  outline: { color: "#09090B" },
 };
