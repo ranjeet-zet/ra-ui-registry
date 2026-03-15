@@ -27,6 +27,14 @@
     { "name": "toast", "description": "A succinct message that is displayed temporarily.", "files": ["toast.tsx"], "dependencies": [] },
     { "name": "toggle", "description": "A two-state button that can be either on or off.", "files": ["toggle.tsx"], "dependencies": [] },
     { "name": "toggle-group", "description": "A set of two-state buttons that can be toggled.", "files": ["toggle-group.tsx"], "dependencies": [] },
-    { "name": "tooltip", "description": "A popup that displays information related to an element on hover.", "files": ["tooltip.tsx"], "dependencies": [] }
+    { "name": "tooltip", "description": "A popup that displays information related to an element on hover.", "files": ["tooltip.tsx"], "dependencies": [] },
+    { "name": "breadcrumb", "description": "Displays the path to the current page in a hierarchy.", "files": ["breadcrumb.tsx"], "dependencies": [] },
+    { "name": "calendar", "description": "A date calendar component for selecting dates.", "files": ["calendar.tsx"], "dependencies": [] },
+    { "name": "carousel", "description": "A swipeable carousel built with ScrollView.", "files": ["carousel.tsx"], "dependencies": [] },
+    { "name": "date-picker", "description": "A date picker component with calendar popup.", "files": ["date-picker.tsx"], "dependencies": [] },
+    { "name": "dropdown-menu", "description": "A menu of actions triggered by a button.", "files": ["dropdown-menu.tsx"], "dependencies": [] },
+    { "name": "pagination", "description": "Navigation controls for paged content.", "files": ["pagination.tsx"], "dependencies": [] },
+    { "name": "popover", "description": "Displays floating content triggered by a button.", "files": ["popover.tsx"], "dependencies": [] },
+    { "name": "scroll-area", "description": "A scrollable area with customizable constraints.", "files": ["scroll-area.tsx"], "dependencies": [] }
   ]
 }
