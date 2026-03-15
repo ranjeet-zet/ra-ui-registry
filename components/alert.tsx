@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ViewStyle } from "react-native";
 
-type Variant = "info" | "success" | "warning" | "error";
+type Variant = "info" | "success" | "warning" | "error" | "primary";
 
 interface AlertProps {
   title: string;
@@ -31,6 +31,7 @@ const iconMap: Record<Variant, string> = {
   success: "\u2705",
   warning: "\u26A0\uFE0F",
   error: "\u274C",
+  primary: "\u2728",
 };
 
 const styles = StyleSheet.create({
@@ -61,22 +62,25 @@ const styles = StyleSheet.create({
 });
 
 const variantStyles: Record<Variant, ViewStyle> = {
-  info: { backgroundColor: "#EFF6FF", borderColor: "#BFDBFE" },
-  success: { backgroundColor: "#F0FDF4", borderColor: "#BBF7D0" },
-  warning: { backgroundColor: "#FFFBEB", borderColor: "#FDE68A" },
-  error: { backgroundColor: "#FEF2F2", borderColor: "#FECACA" },
+  info: { backgroundColor: "#f7f0ff", borderColor: "#e3c7ff" },
+  success: { backgroundColor: "#f0faf1", borderColor: "#c6ebc9" },
+  warning: { backgroundColor: "#fff9f0", borderColor: "#fee3b9" },
+  error: { backgroundColor: "#fef5f5", borderColor: "#fccfd5" },
+  primary: { backgroundColor: "#f7f0ff", borderColor: "#d1a3ff" },
 };
 
 const variantTitleStyles: Record<Variant, { color: string }> = {
-  info: { color: "#1E40AF" },
-  success: { color: "#166534" },
-  warning: { color: "#92400E" },
-  error: { color: "#991B1B" },
+  info: { color: "#380070" },
+  success: { color: "#1f5b23" },
+  warning: { color: "#7e4e02" },
+  error: { color: "#820818" },
+  primary: { color: "#380070" },
 };
 
 const variantMessageStyles: Record<Variant, { color: string }> = {
-  info: { color: "#1E3A8A" },
-  success: { color: "#14532D" },
-  warning: { color: "#78350F" },
-  error: { color: "#7F1D1D" },
+  info: { color: "#5700ad" },
+  success: { color: "#2b7d31" },
+  warning: { color: "#b06d03" },
+  error: { color: "#ad0b20" },
+  primary: { color: "#5700ad" },
 };

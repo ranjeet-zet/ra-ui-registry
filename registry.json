@@ -2,62 +2,122 @@
   "components": [
     {
       "name": "button",
-      "description": "A styled Pressable button component with variants",
+      "description": "Pressable button with variants — primary, outline, ghost, error, success, warning. Supports loading, icons, sizes.",
       "files": ["button.tsx"],
       "dependencies": []
     },
     {
       "name": "input",
-      "description": "A styled TextInput component",
+      "description": "TextInput with label, error, icon left/right, required indicator, focus state, sizes.",
       "files": ["input.tsx"],
       "dependencies": []
     },
     {
+      "name": "textarea",
+      "description": "Multi-line TextInput with label, error, character count, max length support.",
+      "files": ["textarea.tsx"],
+      "dependencies": []
+    },
+    {
       "name": "card",
-      "description": "A card container component",
+      "description": "Card container with Header, Body, Footer sub-components and shadow styling.",
       "files": ["card.tsx"],
       "dependencies": []
     },
     {
       "name": "avatar",
-      "description": "A circular avatar with image and fallback initials",
+      "description": "Circular avatar with image, fallback initials, HSL color from name. Includes AvatarGroup.",
       "files": ["avatar.tsx"],
       "dependencies": []
     },
     {
       "name": "badge",
-      "description": "A small status badge with color variants",
+      "description": "Small status badge with default, success, warning, error, info variants.",
       "files": ["badge.tsx"],
       "dependencies": []
     },
     {
-      "name": "divider",
-      "description": "A horizontal or vertical divider line",
-      "files": ["divider.tsx"],
+      "name": "tag",
+      "description": "Compact label tag with primary, success, error, warning, info, neutral variants.",
+      "files": ["tag.tsx"],
       "dependencies": []
     },
     {
       "name": "chip",
-      "description": "A selectable chip/tag component",
+      "description": "Selectable chip with solid/outlined types, icon support, sizes.",
       "files": ["chip.tsx"],
       "dependencies": []
     },
     {
+      "name": "selectable-chip",
+      "description": "Toggle chip with active/inactive state for filters and selections.",
+      "files": ["selectable-chip.tsx"],
+      "dependencies": []
+    },
+    {
       "name": "switch",
-      "description": "An animated toggle switch component",
+      "description": "Animated toggle switch with intent variants — primary, success, warning, error.",
       "files": ["switch.tsx"],
       "dependencies": []
     },
     {
       "name": "checkbox",
-      "description": "A checkbox with label and checked state",
+      "description": "Checkbox with label, checked state, and disabled support.",
       "files": ["checkbox.tsx"],
       "dependencies": []
     },
     {
+      "name": "select",
+      "description": "Dropdown select with modal picker, label, error, placeholder support.",
+      "files": ["select.tsx"],
+      "dependencies": []
+    },
+    {
       "name": "alert",
-      "description": "An alert banner with info, success, warning, error variants",
+      "description": "Alert banner with info, success, warning, error, primary variants.",
       "files": ["alert.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "toast",
+      "description": "Toast notification with intent color border, title, message, action button, close.",
+      "files": ["toast.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "accordion",
+      "description": "Collapsible section with animated expand/collapse, title, subtitle.",
+      "files": ["accordion.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "divider",
+      "description": "Horizontal or vertical divider line with optional label.",
+      "files": ["divider.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "tile",
+      "description": "Pressable tile container with subtitle and size variants.",
+      "files": ["tile.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "stepper",
+      "description": "Step progress bar showing current/total steps with intent colors.",
+      "files": ["stepper.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "fab",
+      "description": "Floating action button with absolute positioning, shadow, icon, loading, variants.",
+      "files": ["fab.tsx"],
+      "dependencies": []
+    },
+    {
+      "name": "icon-button",
+      "description": "Pressable icon wrapper with default, primary, ghost variants and sizes.",
+      "files": ["icon-button.tsx"],
       "dependencies": []
     }
   ]

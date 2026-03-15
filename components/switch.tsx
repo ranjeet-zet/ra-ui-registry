@@ -6,11 +6,13 @@ import {
   ViewStyle,
 } from "react-native";
 
+type Intent = "primary" | "success" | "warning" | "error";
+
 interface SwitchProps {
   value: boolean;
   onValueChange: (value: boolean) => void;
   disabled?: boolean;
-  activeColor?: string;
+  intent?: Intent;
   style?: ViewStyle;
 }
 
@@ -18,11 +20,11 @@ export function Switch({
   value,
   onValueChange,
   disabled = false,
-  activeColor = "#6D28D9",
+  intent = "primary",
   style,
 }: SwitchProps) {
   const translateX = useRef(new Animated.Value(value ? 20 : 2)).current;
-  const bgColor = useRef(new Animated.Value(value ? 1 : 0)).current;
+  const bgAnim = useRef(new Animated.Value(value ? 1 : 0)).current;
 
   useEffect(() => {
     Animated.parallel([
@@ -32,7 +34,7 @@ export function Switch({
         friction: 8,
         tension: 60,
       }),
-      Animated.timing(bgColor, {
+      Animated.timing(bgAnim, {
         toValue: value ? 1 : 0,
         duration: 200,
         useNativeDriver: false,
@@ -40,9 +42,9 @@ export function Switch({
     ]).start();
   }, [value]);
 
-  const backgroundColor = bgColor.interpolate({
+  const backgroundColor = bgAnim.interpolate({
     inputRange: [0, 1],
-    outputRange: ["#D4D4D8", activeColor],
+    outputRange: ["#BABABF", intentColors[intent]],
   });
 
   return (
@@ -58,6 +60,13 @@ export function Switch({
     </Pressable>
   );
 }
+
+const intentColors: Record<Intent, string> = {
+  primary: "#832dc2",
+  success: "#41bc49",
+  warning: "#ffa32a",
+  error: "#ff4961",
+};
 
 const styles = StyleSheet.create({
   track: {
