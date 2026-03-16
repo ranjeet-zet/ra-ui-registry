@@ -9,7 +9,7 @@ Like [shadcn/ui](https://ui.shadcn.com) — but for React Native.
 [![dependencies](https://img.shields.io/badge/dependencies-0-22c55e)]()
 [![license](https://img.shields.io/npm/l/ra-ui.svg)](https://opensource.org/licenses/MIT)
 
-**Website:** [ra-ui-rho.vercel.app](https://ra-ui-rho.vercel.app)
+**Website:** [ra-ui.com](https://ra-ui.com)
 
 ---
 
@@ -174,7 +174,7 @@ Every component must:
 
 ## Links
 
-- **Website:** [ra-ui-rho.vercel.app](https://ra-ui-rho.vercel.app)
+- **Website:** [ra-ui.com](https://ra-ui.com)
 - **npm:** [npmjs.com/package/ra-ui](https://www.npmjs.com/package/ra-ui)
 - **CLI repo:** [github.com/ranjeet-zet/ra-ui-registry](https://github.com/ranjeet-zet/ra-ui-registry)
 
