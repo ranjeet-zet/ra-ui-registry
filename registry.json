@@ -35,6 +35,17 @@
     { "name": "dropdown-menu", "description": "A menu of actions triggered by a button.", "files": ["dropdown-menu.tsx"], "dependencies": [] },
     { "name": "pagination", "description": "Navigation controls for paged content.", "files": ["pagination.tsx"], "dependencies": [] },
     { "name": "popover", "description": "Displays floating content triggered by a button.", "files": ["popover.tsx"], "dependencies": [] },
-    { "name": "scroll-area", "description": "A scrollable area with customizable constraints.", "files": ["scroll-area.tsx"], "dependencies": [] }
+    { "name": "scroll-area", "description": "A scrollable area with customizable constraints.", "files": ["scroll-area.tsx"], "dependencies": [] },
+    { "name": "autocomplete", "description": "A text input enhanced by a panel of suggested options.", "files": ["autocomplete.tsx"], "dependencies": [] },
+    { "name": "number-input", "description": "A number input with increment and decrement buttons.", "files": ["number-input.tsx"], "dependencies": [] },
+    { "name": "password-input", "description": "A password input with show/hide toggle.", "files": ["password-input.tsx"], "dependencies": [] },
+    { "name": "search-bar", "description": "A search input with icon and clear button.", "files": ["search-bar.tsx"], "dependencies": [] },
+    { "name": "rating", "description": "A star rating input for selecting a score.", "files": ["rating.tsx"], "dependencies": [] },
+    { "name": "snackbar", "description": "A brief notification at the bottom of the screen.", "files": ["snackbar.tsx"], "dependencies": [] },
+    { "name": "speed-dial", "description": "A floating action button that expands to show multiple actions.", "files": ["speed-dial.tsx"], "dependencies": [] },
+    { "name": "bottom-nav", "description": "A bottom navigation bar with icons and labels.", "files": ["bottom-nav.tsx"], "dependencies": [] },
+    { "name": "timeline", "description": "A vertical timeline displaying events in order.", "files": ["timeline.tsx"], "dependencies": [] },
+    { "name": "stepper", "description": "A multi-step wizard progress indicator.", "files": ["stepper.tsx"], "dependencies": [] },
+    { "name": "chip-input", "description": "An input that creates removable chips/tags.", "files": ["chip-input.tsx"], "dependencies": [] }
   ]
 }
