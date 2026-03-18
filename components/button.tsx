@@ -1,5 +1,14 @@
 import React from "react";
-import { Pressable, Text, ActivityIndicator, StyleSheet, PressableProps, ViewStyle, TextStyle } from "react-native";
+import {
+  Pressable,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+  PressableProps,
+  ViewStyle,
+  TextStyle,
+  StyleProp,
+} from "react-native";
 
 type Variant = "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
 type Size = "default" | "sm" | "lg" | "icon";
@@ -9,28 +18,65 @@ interface ButtonProps extends PressableProps {
   size?: Size;
   title?: string;
   loading?: boolean;
+  activeScale?: number;
   children?: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+  disabled?: boolean;
 }
 
-export function Button({ variant = "default", size = "default", title, loading, disabled, children, style, ...props }: ButtonProps) {
+export function Button({
+  variant = "default",
+  size = "default",
+  title,
+  loading,
+  disabled,
+  activeScale = 0.96,
+  children,
+  style,
+  ...props
+}: ButtonProps) {
   return (
     <Pressable
-      style={({ pressed }) => [styles.base, variantStyles[variant], sizeStyles[size], pressed && { opacity: 0.8 }, disabled && { opacity: 0.5 }, style as ViewStyle]}
-      disabled={disabled || loading}
+      disabled={disabled }
+      style={({ pressed }: { pressed: boolean }): StyleProp<ViewStyle> => [
+        styles.base,
+        variantStyles[variant],
+        sizeStyles[size],
+        {
+          transform: [{ scale: pressed && !disabled ? activeScale : 1 }],
+          opacity: (pressed || disabled) && variant !== "link" ? 0.7 : 1,
+        },
+        style,
+      ]}
       {...props}
     >
       {loading ? (
-        <ActivityIndicator color={variant === "default" || variant === "destructive" ? "#FFF" : "#18181B"} size="small" />
-      ) : children ? children : (
-        <Text style={[styles.text, variantTextStyles[variant], sizeTextStyles[size]]}>{title}</Text>
+        <ActivityIndicator
+          color={variant === "default" || variant === "destructive" ? "#FFF" : "#18181B"}
+          size="small"
+        />
+      ) : children ? (
+        children
+      ) : (
+        <Text selectable={false} style={[styles.text, variantTextStyles[variant], sizeTextStyles[size]]}>
+          {title}
+        </Text>
       )}
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  base: { flexDirection: "row", alignItems: "center", justifyContent: "center", borderRadius: 6, gap: 8 },
-  text: { fontWeight: "500" },
+  base: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 6,
+    gap: 8,
+  },
+  text: {
+    fontWeight: "500",
+  },
 });
 
 const variantStyles: Record<Variant, ViewStyle> = {
@@ -53,8 +99,8 @@ const variantTextStyles: Record<Variant, TextStyle> = {
 
 const sizeStyles: Record<Size, ViewStyle> = {
   default: { paddingHorizontal: 16, paddingVertical: 10, height: 40 },
-  sm: { paddingHorizontal: 12, paddingVertical: 6, height: 36, borderRadius: 6 },
-  lg: { paddingHorizontal: 32, paddingVertical: 12, height: 44, borderRadius: 6 },
+  sm: { paddingHorizontal: 12, paddingVertical: 6, height: 36 },
+  lg: { paddingHorizontal: 32, paddingVertical: 12, height: 44 },
   icon: { width: 40, height: 40 },
 };
 
